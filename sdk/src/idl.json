@@ -1,0 +1,1555 @@
+{
+  "address": "2UFrdXwUEDtr5uXsVrCYuvnGoaESQM9UqVVovEYmsAY4",
+  "metadata": {
+    "name": "gigsafe_protocol",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "GigSafe — Trustless freelance escrow on Solana"
+  },
+  "instructions": [
+    {
+      "name": "accept_gig",
+      "docs": [
+        "Freelancer accepts the gig."
+      ],
+      "discriminator": [
+        94,
+        129,
+        189,
+        107,
+        220,
+        74,
+        82,
+        57
+      ],
+      "accounts": [
+        {
+          "name": "gig",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "gig.client",
+                "account": "GigAccount"
+              },
+              {
+                "kind": "arg",
+                "path": "gig_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "freelancer",
+          "writable": true,
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "_gig_id",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "approve_milestone",
+      "docs": [
+        "Client approves a milestone → releases payment to freelancer."
+      ],
+      "discriminator": [
+        145,
+        85,
+        92,
+        60,
+        50,
+        130,
+        219,
+        106
+      ],
+      "accounts": [
+        {
+          "name": "gig",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "client_key"
+              },
+              {
+                "kind": "arg",
+                "path": "gig_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "escrow",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  115,
+                  99,
+                  114,
+                  111,
+                  119
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "gig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "client",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "freelancer_token_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "freelancer_wallet"
+              },
+              {
+                "kind": "const",
+                "value": [
+                  6,
+                  221,
+                  246,
+                  225,
+                  215,
+                  101,
+                  161,
+                  147,
+                  217,
+                  203,
+                  225,
+                  70,
+                  206,
+                  235,
+                  121,
+                  172,
+                  28,
+                  180,
+                  133,
+                  237,
+                  95,
+                  91,
+                  55,
+                  145,
+                  58,
+                  140,
+                  245,
+                  133,
+                  126,
+                  255,
+                  0,
+                  169
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "token_mint"
+              }
+            ],
+            "program": {
+              "kind": "const",
+              "value": [
+                140,
+                151,
+                37,
+                143,
+                78,
+                36,
+                137,
+                241,
+                187,
+                61,
+                16,
+                41,
+                20,
+                142,
+                13,
+                131,
+                11,
+                90,
+                19,
+                153,
+                218,
+                255,
+                16,
+                132,
+                4,
+                142,
+                123,
+                216,
+                219,
+                233,
+                248,
+                89
+              ]
+            }
+          }
+        },
+        {
+          "name": "freelancer_wallet"
+        },
+        {
+          "name": "token_mint"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "associated_token_program",
+          "address": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
+        }
+      ],
+      "args": [
+        {
+          "name": "_client_key",
+          "type": "pubkey"
+        },
+        {
+          "name": "_gig_id",
+          "type": "u64"
+        },
+        {
+          "name": "milestone_index",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "cancel_gig",
+      "docs": [
+        "Client cancels a gig before freelancer accepts. Full refund."
+      ],
+      "discriminator": [
+        109,
+        142,
+        65,
+        80,
+        226,
+        145,
+        135,
+        185
+      ],
+      "accounts": [
+        {
+          "name": "gig",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "client_key"
+              },
+              {
+                "kind": "arg",
+                "path": "gig_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "escrow",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  115,
+                  99,
+                  114,
+                  111,
+                  119
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "gig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "client",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "client_token_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "client"
+              },
+              {
+                "kind": "const",
+                "value": [
+                  6,
+                  221,
+                  246,
+                  225,
+                  215,
+                  101,
+                  161,
+                  147,
+                  217,
+                  203,
+                  225,
+                  70,
+                  206,
+                  235,
+                  121,
+                  172,
+                  28,
+                  180,
+                  133,
+                  237,
+                  95,
+                  91,
+                  55,
+                  145,
+                  58,
+                  140,
+                  245,
+                  133,
+                  126,
+                  255,
+                  0,
+                  169
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "token_mint"
+              }
+            ],
+            "program": {
+              "kind": "const",
+              "value": [
+                140,
+                151,
+                37,
+                143,
+                78,
+                36,
+                137,
+                241,
+                187,
+                61,
+                16,
+                41,
+                20,
+                142,
+                13,
+                131,
+                11,
+                90,
+                19,
+                153,
+                218,
+                255,
+                16,
+                132,
+                4,
+                142,
+                123,
+                216,
+                219,
+                233,
+                248,
+                89
+              ]
+            }
+          }
+        },
+        {
+          "name": "token_mint"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": [
+        {
+          "name": "_client_key",
+          "type": "pubkey"
+        },
+        {
+          "name": "_gig_id",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "create_gig",
+      "docs": [
+        "Create a new gig with milestones."
+      ],
+      "discriminator": [
+        175,
+        168,
+        234,
+        97,
+        64,
+        177,
+        7,
+        144
+      ],
+      "accounts": [
+        {
+          "name": "gig",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "client"
+              },
+              {
+                "kind": "arg",
+                "path": "gig_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "escrow",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  115,
+                  99,
+                  114,
+                  111,
+                  119
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "gig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "client",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "token_mint"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": [
+        {
+          "name": "gig_id",
+          "type": "u64"
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "milestone_amounts",
+          "type": {
+            "vec": "u64"
+          }
+        },
+        {
+          "name": "deadline",
+          "type": "i64"
+        }
+      ]
+    },
+    {
+      "name": "fund_gig",
+      "docs": [
+        "Client deposits tokens into the escrow PDA."
+      ],
+      "discriminator": [
+        47,
+        107,
+        217,
+        195,
+        133,
+        87,
+        27,
+        81
+      ],
+      "accounts": [
+        {
+          "name": "gig",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "client"
+              },
+              {
+                "kind": "arg",
+                "path": "gig_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "escrow",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  115,
+                  99,
+                  114,
+                  111,
+                  119
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "gig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "client",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "client_token_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "client"
+              },
+              {
+                "kind": "const",
+                "value": [
+                  6,
+                  221,
+                  246,
+                  225,
+                  215,
+                  101,
+                  161,
+                  147,
+                  217,
+                  203,
+                  225,
+                  70,
+                  206,
+                  235,
+                  121,
+                  172,
+                  28,
+                  180,
+                  133,
+                  237,
+                  95,
+                  91,
+                  55,
+                  145,
+                  58,
+                  140,
+                  245,
+                  133,
+                  126,
+                  255,
+                  0,
+                  169
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "gig.token_mint",
+                "account": "GigAccount"
+              }
+            ],
+            "program": {
+              "kind": "const",
+              "value": [
+                140,
+                151,
+                37,
+                143,
+                78,
+                36,
+                137,
+                241,
+                187,
+                61,
+                16,
+                41,
+                20,
+                142,
+                13,
+                131,
+                11,
+                90,
+                19,
+                153,
+                218,
+                255,
+                16,
+                132,
+                4,
+                142,
+                123,
+                216,
+                219,
+                233,
+                248,
+                89
+              ]
+            }
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": [
+        {
+          "name": "_gig_id",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "request_dispute",
+      "docs": [
+        "Either party raises a dispute."
+      ],
+      "discriminator": [
+        36,
+        131,
+        195,
+        195,
+        170,
+        163,
+        154,
+        14
+      ],
+      "accounts": [
+        {
+          "name": "gig",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "gig.client",
+                "account": "GigAccount"
+              },
+              {
+                "kind": "arg",
+                "path": "gig_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "caller",
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "_gig_id",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "resolve_dispute",
+      "docs": [
+        "Resolve a dispute by splitting remaining escrow funds.",
+        "freelancer_bps: basis points for freelancer (0-10000)",
+        "Remaining goes to client."
+      ],
+      "discriminator": [
+        231,
+        6,
+        202,
+        6,
+        96,
+        103,
+        12,
+        230
+      ],
+      "accounts": [
+        {
+          "name": "gig",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "client_key"
+              },
+              {
+                "kind": "arg",
+                "path": "gig_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "escrow",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  115,
+                  99,
+                  114,
+                  111,
+                  119
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "gig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "resolver",
+          "docs": [
+            "Resolver can be client (for now). Future: DAO/arbitrator."
+          ],
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "freelancer_token_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "freelancer_wallet"
+              },
+              {
+                "kind": "const",
+                "value": [
+                  6,
+                  221,
+                  246,
+                  225,
+                  215,
+                  101,
+                  161,
+                  147,
+                  217,
+                  203,
+                  225,
+                  70,
+                  206,
+                  235,
+                  121,
+                  172,
+                  28,
+                  180,
+                  133,
+                  237,
+                  95,
+                  91,
+                  55,
+                  145,
+                  58,
+                  140,
+                  245,
+                  133,
+                  126,
+                  255,
+                  0,
+                  169
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "token_mint"
+              }
+            ],
+            "program": {
+              "kind": "const",
+              "value": [
+                140,
+                151,
+                37,
+                143,
+                78,
+                36,
+                137,
+                241,
+                187,
+                61,
+                16,
+                41,
+                20,
+                142,
+                13,
+                131,
+                11,
+                90,
+                19,
+                153,
+                218,
+                255,
+                16,
+                132,
+                4,
+                142,
+                123,
+                216,
+                219,
+                233,
+                248,
+                89
+              ]
+            }
+          }
+        },
+        {
+          "name": "client_token_account",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "account",
+                "path": "client_wallet"
+              },
+              {
+                "kind": "const",
+                "value": [
+                  6,
+                  221,
+                  246,
+                  225,
+                  215,
+                  101,
+                  161,
+                  147,
+                  217,
+                  203,
+                  225,
+                  70,
+                  206,
+                  235,
+                  121,
+                  172,
+                  28,
+                  180,
+                  133,
+                  237,
+                  95,
+                  91,
+                  55,
+                  145,
+                  58,
+                  140,
+                  245,
+                  133,
+                  126,
+                  255,
+                  0,
+                  169
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "token_mint"
+              }
+            ],
+            "program": {
+              "kind": "const",
+              "value": [
+                140,
+                151,
+                37,
+                143,
+                78,
+                36,
+                137,
+                241,
+                187,
+                61,
+                16,
+                41,
+                20,
+                142,
+                13,
+                131,
+                11,
+                90,
+                19,
+                153,
+                218,
+                255,
+                16,
+                132,
+                4,
+                142,
+                123,
+                216,
+                219,
+                233,
+                248,
+                89
+              ]
+            }
+          }
+        },
+        {
+          "name": "freelancer_wallet"
+        },
+        {
+          "name": "client_wallet"
+        },
+        {
+          "name": "token_mint"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "associated_token_program",
+          "address": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
+        }
+      ],
+      "args": [
+        {
+          "name": "_client_key",
+          "type": "pubkey"
+        },
+        {
+          "name": "_gig_id",
+          "type": "u64"
+        },
+        {
+          "name": "freelancer_bps",
+          "type": "u16"
+        }
+      ]
+    },
+    {
+      "name": "submit_milestone",
+      "docs": [
+        "Freelancer submits a milestone as complete."
+      ],
+      "discriminator": [
+        35,
+        96,
+        220,
+        215,
+        102,
+        83,
+        139,
+        52
+      ],
+      "accounts": [
+        {
+          "name": "gig",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "gig.client",
+                "account": "GigAccount"
+              },
+              {
+                "kind": "arg",
+                "path": "gig_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "freelancer",
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "_gig_id",
+          "type": "u64"
+        },
+        {
+          "name": "milestone_index",
+          "type": "u8"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "GigAccount",
+      "discriminator": [
+        79,
+        90,
+        80,
+        92,
+        149,
+        143,
+        118,
+        126
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "DisputeRaised",
+      "discriminator": [
+        246,
+        167,
+        109,
+        37,
+        142,
+        45,
+        38,
+        176
+      ]
+    },
+    {
+      "name": "DisputeResolved",
+      "discriminator": [
+        121,
+        64,
+        249,
+        153,
+        139,
+        128,
+        236,
+        187
+      ]
+    },
+    {
+      "name": "GigAccepted",
+      "discriminator": [
+        6,
+        108,
+        227,
+        152,
+        237,
+        213,
+        4,
+        1
+      ]
+    },
+    {
+      "name": "GigCancelled",
+      "discriminator": [
+        125,
+        193,
+        224,
+        148,
+        176,
+        113,
+        250,
+        18
+      ]
+    },
+    {
+      "name": "GigCreated",
+      "discriminator": [
+        99,
+        221,
+        204,
+        160,
+        24,
+        21,
+        102,
+        174
+      ]
+    },
+    {
+      "name": "GigFunded",
+      "discriminator": [
+        73,
+        187,
+        35,
+        12,
+        30,
+        175,
+        49,
+        104
+      ]
+    },
+    {
+      "name": "MilestoneApproved",
+      "discriminator": [
+        40,
+        109,
+        159,
+        144,
+        169,
+        230,
+        35,
+        229
+      ]
+    },
+    {
+      "name": "MilestoneSubmitted",
+      "discriminator": [
+        242,
+        19,
+        75,
+        99,
+        12,
+        28,
+        19,
+        33
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InvalidTitle",
+      "msg": "Title must be 1-64 characters"
+    },
+    {
+      "code": 6001,
+      "name": "InvalidBudget",
+      "msg": "Budget must be greater than zero"
+    },
+    {
+      "code": 6002,
+      "name": "InvalidMilestoneCount",
+      "msg": "Must have 1-10 milestones"
+    },
+    {
+      "code": 6003,
+      "name": "InvalidMilestoneAmount",
+      "msg": "Each milestone amount must be greater than zero"
+    },
+    {
+      "code": 6004,
+      "name": "DeadlineInPast",
+      "msg": "Deadline must be in the future"
+    },
+    {
+      "code": 6005,
+      "name": "GigNotOpen",
+      "msg": "Gig is not open"
+    },
+    {
+      "code": 6006,
+      "name": "GigNotActive",
+      "msg": "Gig is not active"
+    },
+    {
+      "code": 6007,
+      "name": "GigNotDisputed",
+      "msg": "Gig is not disputed"
+    },
+    {
+      "code": 6008,
+      "name": "AlreadyFunded",
+      "msg": "Gig is already funded"
+    },
+    {
+      "code": 6009,
+      "name": "NotFunded",
+      "msg": "Gig must be funded before accepting"
+    },
+    {
+      "code": 6010,
+      "name": "AlreadyAccepted",
+      "msg": "Gig already has a freelancer"
+    },
+    {
+      "code": 6011,
+      "name": "CannotAcceptOwnGig",
+      "msg": "Cannot accept your own gig"
+    },
+    {
+      "code": 6012,
+      "name": "InvalidMilestoneIndex",
+      "msg": "Invalid milestone index"
+    },
+    {
+      "code": 6013,
+      "name": "MilestoneNotPending",
+      "msg": "Milestone is not pending"
+    },
+    {
+      "code": 6014,
+      "name": "MilestoneNotSubmitted",
+      "msg": "Milestone is not submitted"
+    },
+    {
+      "code": 6015,
+      "name": "Unauthorized",
+      "msg": "Unauthorized"
+    },
+    {
+      "code": 6016,
+      "name": "MathOverflow",
+      "msg": "Arithmetic overflow"
+    },
+    {
+      "code": 6017,
+      "name": "InvalidDisputeShares",
+      "msg": "Dispute shares must be 0-10000 basis points"
+    }
+  ],
+  "types": [
+    {
+      "name": "DisputeRaised",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "gig_id",
+            "type": "u64"
+          },
+          {
+            "name": "raised_by",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DisputeResolved",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "gig_id",
+            "type": "u64"
+          },
+          {
+            "name": "freelancer_amount",
+            "type": "u64"
+          },
+          {
+            "name": "client_refund",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GigAccepted",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "gig_id",
+            "type": "u64"
+          },
+          {
+            "name": "freelancer",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GigAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "client",
+            "type": "pubkey"
+          },
+          {
+            "name": "freelancer",
+            "type": "pubkey"
+          },
+          {
+            "name": "token_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "name": "total_budget",
+            "type": "u64"
+          },
+          {
+            "name": "funded_amount",
+            "type": "u64"
+          },
+          {
+            "name": "released_amount",
+            "type": "u64"
+          },
+          {
+            "name": "status",
+            "type": "u8"
+          },
+          {
+            "name": "milestone_count",
+            "type": "u8"
+          },
+          {
+            "name": "milestone_amounts",
+            "type": {
+              "vec": "u64"
+            }
+          },
+          {
+            "name": "milestone_statuses",
+            "type": "bytes"
+          },
+          {
+            "name": "deadline",
+            "type": "i64"
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "gig_id",
+            "type": "u64"
+          },
+          {
+            "name": "escrow_bump",
+            "type": "u8"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GigCancelled",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "gig_id",
+            "type": "u64"
+          },
+          {
+            "name": "refund_amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GigCreated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "gig_id",
+            "type": "u64"
+          },
+          {
+            "name": "client",
+            "type": "pubkey"
+          },
+          {
+            "name": "total_budget",
+            "type": "u64"
+          },
+          {
+            "name": "milestone_count",
+            "type": "u8"
+          },
+          {
+            "name": "token_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "deadline",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GigFunded",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "gig_id",
+            "type": "u64"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "token_mint",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MilestoneApproved",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "gig_id",
+            "type": "u64"
+          },
+          {
+            "name": "milestone_index",
+            "type": "u8"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MilestoneSubmitted",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "gig_id",
+            "type": "u64"
+          },
+          {
+            "name": "milestone_index",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ]
+}

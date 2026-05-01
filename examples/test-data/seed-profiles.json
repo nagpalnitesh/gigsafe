@@ -1,0 +1,35 @@
+[
+  {
+    "wallet": "client-demo-wallet-001",
+    "displayName": "Alex Rivera",
+    "bio": "Startup founder building in the Solana ecosystem. Looking for talented freelancers.",
+    "skills": ["Product", "Strategy", "Solana"],
+    "twitter": "@alexrivera",
+    "github": "alexrivera",
+    "website": "https://alexrivera.dev"
+  },
+  {
+    "wallet": "freelancer-demo-wallet-001",
+    "displayName": "Priya Sharma",
+    "bio": "Full-stack developer. 5 years React/Next.js, 2 years Solana/Anchor. Love building beautiful UIs.",
+    "skills": ["React", "Next.js", "Solana", "Anchor", "TypeScript", "TailwindCSS"],
+    "twitter": "@priyabuilds",
+    "github": "priyasharma"
+  },
+  {
+    "wallet": "freelancer-demo-wallet-002",
+    "displayName": "Marcus Chen",
+    "bio": "Security researcher. Audited 20+ Solana programs. Focus on DeFi and escrow protocols.",
+    "skills": ["Rust", "Security", "Solana", "Smart Contracts", "DeFi"],
+    "twitter": "@marcusaudit",
+    "github": "marcuschen"
+  },
+  {
+    "wallet": "freelancer-demo-wallet-003",
+    "displayName": "Sofia Gonzalez",
+    "bio": "UI/UX designer specializing in Web3 products. Clean, modern, accessible.",
+    "skills": ["Figma", "UI/UX", "Branding", "Motion Design"],
+    "twitter": "@sofiadesigns",
+    "website": "https://sofiagonzalez.design"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Build a Landing Page for SaaS Startup",
+    "description": "Modern responsive landing page with hero section, pricing table, testimonials, and CTA. Must be mobile-first and load under 2 seconds.",
+    "category": "development",
+    "milestones": [
+      { "name": "Design Mockups", "amount": 50 },
+      { "name": "Frontend Development", "amount": 100 },
+      { "name": "Deploy & QA", "amount": 50 }
+    ],
+    "totalBudget": 200,
+    "deadlineDays": 14
+  },
+  {
+    "title": "Smart Contract Security Audit",
+    "description": "Full security audit of a Solana Anchor program (3 instructions, ~500 lines). Need vulnerability report with severity ratings.",
+    "category": "security",
+    "milestones": [
+      { "name": "Initial Review & Scope", "amount": 200 },
+      { "name": "Deep Analysis & Report", "amount": 500 },
+      { "name": "Fix Verification", "amount": 300 }
+    ],
+    "totalBudget": 1000,
+    "deadlineDays": 21
+  },
+  {
+    "title": "Design NFT Collection — 10 Pieces",
+    "description": "Create a cohesive 10-piece NFT art collection with consistent style. Include layered source files and metadata JSON.",
+    "category": "design",
+    "milestones": [
+      { "name": "Style Guide & Sample", "amount": 100 },
+      { "name": "Full Collection", "amount": 250 },
+      { "name": "Metadata & Delivery", "amount": 50 }
+    ],
+    "totalBudget": 400,
+    "deadlineDays": 14
+  },
+  {
+    "title": "Write Technical Documentation for SDK",
+    "description": "Comprehensive docs for a TypeScript SDK: getting started, API reference, tutorials, deployment guide. Must include code examples.",
+    "category": "writing",
+    "milestones": [
+      { "name": "Architecture Overview", "amount": 75 },
+      { "name": "API Reference", "amount": 100 },
+      { "name": "Tutorials & Examples", "amount": 75 }
+    ],
+    "totalBudget": 250,
+    "deadlineDays": 10
+  },
+  {
+    "title": "Social Media Campaign — 30 Days",
+    "description": "Plan and execute a 30-day Twitter/LinkedIn campaign for a Web3 project. Includes content calendar, graphics, and analytics.",
+    "category": "marketing",
+    "milestones": [
+      { "name": "Strategy & Calendar", "amount": 100 },
+      { "name": "Content Creation", "amount": 200 },
+      { "name": "Execution & Report", "amount": 100 }
+    ],
+    "totalBudget": 400,
+    "deadlineDays": 35
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "walletAddress": "freelancer-demo-wallet-001",
+    "review": {
+      "gigPda": "demo-gig-001",
+      "gigTitle": "Landing Page for DeFi Protocol",
+      "reviewer": "client-demo-wallet-001",
+      "reviewerRole": "client",
+      "rating": 5,
+      "comment": "Exceptional work. Delivered ahead of schedule with beautiful animations. Would hire again instantly."
+    }
+  },
+  {
+    "walletAddress": "freelancer-demo-wallet-001",
+    "review": {
+      "gigPda": "demo-gig-002",
+      "gigTitle": "Dashboard Redesign",
+      "reviewer": "client-demo-wallet-002",
+      "reviewerRole": "client",
+      "rating": 4,
+      "comment": "Great developer, responsive communication. Minor delays on the last milestone but quality was excellent."
+    }
+  },
+  {
+    "walletAddress": "client-demo-wallet-001",
+    "review": {
+      "gigPda": "demo-gig-001",
+      "gigTitle": "Landing Page for DeFi Protocol",
+      "reviewer": "freelancer-demo-wallet-001",
+      "reviewerRole": "freelancer",
+      "rating": 5,
+      "comment": "Clear requirements from day one. Fast approvals, great communication. Dream client."
+    }
+  },
+  {
+    "walletAddress": "freelancer-demo-wallet-002",
+    "review": {
+      "gigPda": "demo-gig-003",
+      "gigTitle": "Smart Contract Audit — Staking Protocol",
+      "reviewer": "client-demo-wallet-001",
+      "reviewerRole": "client",
+      "rating": 5,
+      "comment": "Found 2 critical vulnerabilities we missed. Thorough report with clear remediation steps. Worth every penny."
+    }
+  }
+]

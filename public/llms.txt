@@ -1,0 +1,61 @@
+# GigSafe
+
+> GigSafe is a trustless freelance escrow protocol on Solana. Clients lock USDC in non-custodial smart contracts, freelancers complete milestone-based work, and AI resolves disputes in minutes. 0.5% fee — 40x cheaper than Upwork.
+
+## Key Facts
+
+- **Platform fee**: 0.5% (vs 20% on Fiverr, 10-20% on Upwork)
+- **Payout speed**: Instant (vs 7-14 days on traditional platforms)
+- **Dispute resolution**: AI-powered, minutes (vs weeks manual review)
+- **Custody**: Non-custodial Program Derived Accounts (PDAs) on Solana
+- **Network**: Solana (devnet live, mainnet planned)
+- **Token**: USDC
+
+## How It Works
+
+1. Client creates a gig with milestones and deposits USDC into escrow
+2. Freelancer accepts and completes milestone work
+3. Client approves → funds release instantly to freelancer
+4. Disputes: both parties submit evidence → AI analyzes → funds split on-chain
+
+## Core Features
+
+- On-chain milestone payments
+- AI dispute resolution (Llama 3.3 70B / Groq)
+- Non-custodial escrow (PDA)
+- File upload for deliverables
+- In-gig messaging
+- Reputation and reviews
+- TypeScript SDK (@gigsafe/sdk)
+- Freelancer bidding
+- Gig categories (11 types)
+- Invoice/receipt generation
+
+## Key Pages
+
+- [Landing Page](https://gigsafe.pixxmo.com/) — Product overview and comparison
+- [Browse Gigs](https://gigsafe.pixxmo.com/gigs) — Open gigs on Solana
+- [Create Gig](https://gigsafe.pixxmo.com/create) — Post a new gig with escrow
+- [Faucet](https://gigsafe.pixxmo.com/faucet) — Get devnet test USDC
+- [Dashboard](https://gigsafe.pixxmo.com/dashboard) — Manage your gigs
+
+## Comparison
+
+| Feature | GigSafe | Upwork | Fiverr |
+|---------|---------|--------|--------|
+| Fee | 0.5% | 10-20% | 20% |
+| Payout | Instant | 7-14 days | 14 days |
+| Disputes | AI (minutes) | Manual (weeks) | Manual (weeks) |
+| Custody | Non-custodial | Platform bank | Platform bank |
+| Global access | Anywhere (USDC) | Banking required | Banking required |
+
+## Built By
+
+GigSafe is a product of [Pixxmo](https://pixxmo.wildsnap.in) — an AI product studio building tools for indie founders and developers. Built for the Solana Frontier Hackathon 2026.
+
+## On-Chain Details
+
+- Program ID: `2UFrdXwUEDtr5uXsVrCYuvnGoaESQM9UqVVovEYmsAY4`
+- Network: Solana Devnet
+- Token: USDC (devnet test token)
+- Explorer: [Solana Explorer](https://explorer.solana.com/address/2UFrdXwUEDtr5uXsVrCYuvnGoaESQM9UqVVovEYmsAY4?cluster=devnet)
