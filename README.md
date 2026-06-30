@@ -92,7 +92,7 @@ If there's a dispute → AI analyzes evidence → Suggests fair resolution.
 
 ### Landing Page
 ```bash
-git clone https://github.com/indiepilotai/gigsafe.git
+git clone https://github.com/nagpalnitesh/gigsafe.git
 cd gigsafe
 bun install
 bun run dev
