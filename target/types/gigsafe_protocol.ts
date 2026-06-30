@@ -5,7 +5,7 @@
  * IDL can be found at `target/idl/gigsafe_protocol.json`.
  */
 export type GigsafeProtocol = {
-  "address": "2UFrdXwUEDtr5uXsVrCYuvnGoaESQM9UqVVovEYmsAY4",
+  "address": "GKPM5kb97EieoTcCwQcKDhyCqai7YY6Mc9vkZjfgbv1A",
   "metadata": {
     "name": "gigsafeProtocol",
     "version": "0.1.0",

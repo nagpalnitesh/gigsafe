@@ -92,7 +92,7 @@ If there's a dispute → AI analyzes evidence → Suggests fair resolution.
 
 ### Landing Page
 ```bash
-git clone https://github.com/nagpalnitesh/gigsafe.git
+git clone https://github.com/indiepilotai/gigsafe.git
 cd gigsafe
 bun install
 bun run dev
@@ -132,7 +132,7 @@ anchor deploy --provider.cluster devnet
 
 | | |
 |---|---|
-| Landing Page | [gigsafe.pixxmo.com](https://gigsafe.pixxmo.com) |
+| Landing Page | [gigsafe.wildsnap.in](https://gigsafe.wildsnap.in) |
 | Twitter | [@nagpalnitesh](https://x.com/nagpalnitesh) |
 
 ## Hackathon

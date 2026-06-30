@@ -1,5 +1,6 @@
 [toolchain]
 package_manager = "yarn"
+anchor_version = "0.32.1"
 
 [features]
 resolution = true
@@ -8,11 +9,14 @@ skip-lint = false
 [programs.localnet]
 gigsafe_protocol = "2UFrdXwUEDtr5uXsVrCYuvnGoaESQM9UqVVovEYmsAY4"
 
+[programs.devnet]
+gigsafe_protocol = "GKPM5kb97EieoTcCwQcKDhyCqai7YY6Mc9vkZjfgbv1A"
+
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "localnet"
+cluster = "devnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]
