@@ -47,3 +47,4 @@ data/
 data/gigsafe.db
 scripts/demo/frames/
 !.env.example
+target/

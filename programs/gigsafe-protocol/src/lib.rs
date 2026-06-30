@@ -2,7 +2,7 @@ use anchor_lang::prelude::*;
 use anchor_spl::associated_token::AssociatedToken;
 use anchor_spl::token::{self, CloseAccount, Mint, Token, TokenAccount, Transfer};
 
-declare_id!("2UFrdXwUEDtr5uXsVrCYuvnGoaESQM9UqVVovEYmsAY4");
+declare_id!("GKPM5kb97EieoTcCwQcKDhyCqai7YY6Mc9vkZjfgbv1A");
 
 // ============================================================
 // GigSafe Protocol — Trustless Freelance Escrow on Solana
