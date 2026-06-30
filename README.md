@@ -132,7 +132,7 @@ anchor deploy --provider.cluster devnet
 
 | | |
 |---|---|
-| Landing Page | [gigsafe.wildsnap.in](https://gigsafe.wildsnap.in) |
+| Landing Page | [gigsafe.pixxmo.com](https://gigsafe.pixxmo.com) |
 | Twitter | [@nagpalnitesh](https://x.com/nagpalnitesh) |
 
 ## Hackathon
